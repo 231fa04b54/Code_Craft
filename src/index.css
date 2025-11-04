@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Gaming Dark Theme - Cosmic Purple */
+    --background: 240 10% 8%;
+    --foreground: 280 15% 95%;
+
+    --card: 240 8% 12%;
+    --card-foreground: 280 15% 95%;
+
+    --popover: 240 8% 12%;
+    --popover-foreground: 280 15% 95%;
+
+    --primary: 270 91% 65%;
+    --primary-foreground: 240 10% 8%;
+
+    --secondary: 260 15% 18%;
+    --secondary-foreground: 280 15% 85%;
+
+    --muted: 260 10% 15%;
+    --muted-foreground: 280 8% 65%;
+
+    --accent: 290 84% 60%;
+    --accent-foreground: 240 10% 8%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 280 15% 95%;
+
+    --border: 260 10% 20%;
+    --input: 260 10% 18%;
+    --ring: 270 91% 65%;
+
+    /* Gaming UI Specific Colors */
+    --cosmic-primary: 270 91% 65%;
+    --cosmic-secondary: 260 84% 70%;
+    --cosmic-accent: 290 84% 60%;
+    --gaming-gold: 45 100% 60%;
+    --gaming-silver: 200 15% 75%;
+    --gaming-bronze: 25 85% 55%;
+    
+    /* Gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(270 91% 65%) 0%, hsl(290 84% 60%) 50%, hsl(260 84% 70%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(240 10% 8%) 0%, hsl(260 15% 12%) 50%, hsl(270 20% 15%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(240 8% 12%) 0%, hsl(260 10% 15%) 100%);
+    
+    /* Glows and Shadows */
+    --glow-cosmic: 0 0 30px hsl(270 91% 65% / 0.4);
+    --glow-accent: 0 0 20px hsl(290 84% 60% / 0.3);
+    --shadow-gaming: 0 10px 30px -5px hsl(240 10% 4% / 0.8);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Enhanced Dark Mode for Gaming Theme */
+    --background: 240 12% 6%;
+    --foreground: 280 15% 95%;
+
+    --card: 240 10% 10%;
+    --card-foreground: 280 15% 95%;
+
+    --popover: 240 10% 10%;
+    --popover-foreground: 280 15% 95%;
+
+    --primary: 270 91% 70%;
+    --primary-foreground: 240 12% 6%;
+
+    --secondary: 260 15% 16%;
+    --secondary-foreground: 280 15% 90%;
+
+    --muted: 260 10% 12%;
+    --muted-foreground: 280 8% 60%;
+
+    --accent: 290 84% 65%;
+    --accent-foreground: 240 12% 6%;
+
+    --destructive: 0 75% 65%;
+    --destructive-foreground: 280 15% 95%;
+
+    --border: 260 10% 18%;
+    --input: 260 10% 16%;
+    --ring: 270 91% 70%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background: var(--gradient-hero);
+    background-attachment: fixed;
+  }
+  
+  /* Gaming Typography */
+  .text-cosmic {
+    background: var(--gradient-cosmic);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .glow-cosmic {
+    box-shadow: var(--glow-cosmic);
+  }
+  
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+  
+  /* Animations */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(270 91% 65% / 0.3); }
+    50% { box-shadow: 0 0 30px hsl(270 91% 65% / 0.6); }
+  }
+}
